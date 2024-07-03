@@ -1,0 +1,265 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --azul1: #020f8345;
+    --azul2: #4881fce6;
+    --azul3: #0000ff;
+    --vermelho: #ff0000;
+    --vermelho2: #fc5555;
+    --branco: #ffffff;
+    --verde: #008000;
+    --amarelo: #ffa500;
+
+}    
+body {
+    background-color: var(--azul1);
+}
+
+.terceiro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vermelho);
+    height: 70px;
+    color: var(--branco);
+    font-size: 1.5rem;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 1120px;
+    padding: 10px;
+    background-color: var(--azul2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.content {
+    width: 1100px;
+    height: 55px;
+    padding: 3px;
+    border: 2px solid var(--branco);
+    border-radius: 5px;
+    gap: 10px;
+}
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-right: 5px;
+}
+
+nav .menu  {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--branco);
+}
+
+nav .menu div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    
+}
+
+nav .menu div h1 {
+    font-size: 0.9rem;
+}
+
+nav .menu .destino {
+    width: 400px;
+}
+nav .menu .motorista {
+    width: 300px;
+}
+
+nav .menu span {
+    font-size: 0.8rem;
+    padding-top: 10px;
+}
+ 
+img {
+    width: 45px;
+    border-radius: 50%;
+}
+
+/* ####### ESTILO DAS FASES  ########*/
+
+.mae {
+    width: 1100px;
+    display: flex;
+    gap: 5px;
+}
+
+.fase {
+    width: 253px;
+    height: 85px;
+    color: var(--branco);
+    border-radius: 10px;
+    border: 3px solid var(--azul3);
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+}
+
+.fase .title {
+    display: flex;
+    height: 15px;
+    background-color: var(--azul3);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.4rem;
+    margin-bottom: 3px;
+}
+
+.fase .passo i {
+    color: var(--vermelho);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.fase #IconP1 {
+    color: var(--azul3);
+}
+
+.fase .passo p {
+    color: var(--azul3);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* SECTION NÃO CARREGAMENTO*/
+.noCcarregamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    
+}
+
+.noCcarregamento h1 {
+    font-size: 2rem;
+    color: var(--azul3);
+}
+
+
+footer {
+    background-color: var(--azul3);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: var(--branco);
+    font-size: 0.8rem;
+    padding-right: 10px;
+}
+
+
+/*ESTILO DA FASE CONCLUÍDO*/
+.concluido {
+    width: 253px;
+    height: 85px;
+    color: var(--branco);
+    border-radius: 10px;
+    border: 3px solid var(--verde);
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+}
+
+.concluido .title {
+    display: flex;
+    height: 15px;
+    background-color: var(--verde);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.4rem;
+    margin-bottom: 3px;
+}
+
+.concluido .passo i {
+    color: var(--verde);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+}
+
+.concluido .passo p {
+    color: var(--verde);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/*ESTILO DA FASE CANCELADO*/
+.cancelado {
+    width: 253px;
+    height: 85px;
+    color: var(--branco);
+    border-radius: 10px;
+    border: 3px solid var(--vermelho2);
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+}
+
+.cancelado .title {
+    display: flex;
+    height: 15px;
+    background-color: var(--vermelho2);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.4rem;
+    margin-bottom: 3px;
+}
+
+.cancelado .passo i {
+    color: var(--vermelho2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+}

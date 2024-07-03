@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Carregamento Kanban</title>
+    <!--link do bostrep-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!--fim do link bootrep-->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="body">
+    <section class="terceiro">
+        <div class="painel">
+            <h1 onclick="addCarregamento()">PAINEL DE CARREGAMENTO DIÁRIO!</h1>
+        </div>
+    </section>
+    
+    <div class="principal"> <!-- inicio da div principal -->
+        {% for item in registro %}
+     
+        <div class="card"> 
+            <header class="content">
+                <nav>
+                    <div class="menu">
+                        <div><h1>SEQ</h1><span id="SEQ">{{item[0]}}</span></div>
+                        <div><h1>CLT</h1><span id="CLT">{{item[1]}}</span></div>
+                        <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">{{item[2]}}</span></div>
+                        <div class="destino"><h1>DESTINO</h1><span id="DEST">{{item[3]}}</span></div>
+                        <div><h1>CONFERENTE</h1><span id="CONF">{{item[4]}}</span></div>
+                        <div><h1>PLACA</h1><span id="PLACA">{{item[5]}}</span></div>
+                        <div><h1>CUB</h1><span id="CUB">{{item[6]}}</span></div>
+                    </div>
+                </nav>
+                <div class="logo" onclick="addCarregamento()">
+                    <img src="/static/images.jpg" alt="Não a imagem">
+                </div>
+            </header>
+            <div class="mae">
+                <div class="fase">
+                    <div class="title">
+                        <h1>EM ESPERA</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-truck" id="IconP1"></i>
+                        <p id="MsgP1">separando mercadoria ou aguardando conferente!</p>
+                    </div>
+                </div>
+                <div class="fase">
+                    <div class="title" id="carregando">
+                        <h1>CARREGANDO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP2"></i>
+                        <p id="MsgP2">Opa! jaja daremos o pontapé inicial...</p>
+                    </div>
+                </div>
+        
+                <div class="fase">
+                    <div class="title" id="aguard-faturamento">
+                        <h1>AGUARD FATURAMENTO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP3"></i>
+                        <p id="MsgP3">Parabéns! você avançou uma etapa do processo.</p>
+                    </div>
+                </div>
+                <div class="fase">
+                    <div class="title" id="faturando">
+                        <h1>FATURANDO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP4"></i>
+                        <p id="MsgP4">Parabéns! você avançou uma etapa do processo.</p>
+                    </div>
+                </div>
+                <div class="fase">
+                    <div class="title" id="concluído">
+                        <h1>CONCLUÍDO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP5"></i>
+                        <p id="MsgP5">Parabéns! você avançou uma etapa do processo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+   
+    </div> <!-- fin da div principal -->
+    
+    <section class="noCcarregamento">
+        <h1 class="TextVasio"></h1>
+    </section>
+
+   
+    <footer>
+        <div>Desenvolvido por  Francisco Neponuceno</div>
+    </footer>
+
+    
+    
+</body>
+</html>
