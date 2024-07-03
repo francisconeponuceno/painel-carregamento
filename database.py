@@ -43,5 +43,3 @@ def excluir(id):
     conect.commit()
     conect.close()
 
-
-salvar()
