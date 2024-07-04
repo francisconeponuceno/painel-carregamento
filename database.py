@@ -40,9 +40,9 @@ def TabCarrego():
 
 
 # Inserir um novo usuário
-Dados = ['C', 'EDVAR DE SOUSA DUARTE', 'CHAPADINHA',  'ARIMATÉIA', 'MUY-0350', '70',
+Dados = ['C', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FABIO', 'KBI-6155', '80',
          'fase','fase','fase','fase','fase',
-         'bi bi-truck','bi bi-truck','bi bi-truck','bi bi-truck','bi bi-truck',
+         'bi bi-truck','bi bi-cone-striped','bi bi-cone-striped','bi bi-cone-striped','bi bi-cone-striped',
          'EM ESPERA','CARREGANDO','AGUAR FATURAMENTO','FATURANDO','CONCLUÍDO']
 
 def salvar(clt,mot,dest,conf,placa,cub,casse1,classe2,classe3,classe4,classe5,
@@ -93,18 +93,18 @@ def excluir(id):
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
-    cursor.execute(f'DROP TABLE frase')
+    cursor.execute(f'DROP TABLE carrego')
     conect.commit()
     conect.close()
 
-
+#eliminaTabela()
 TabCarrego()
 
 
 #salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],
- #      Dados[6],Dados[7],Dados[8],Dados[9],Dados[10],Dados[11],
-  #     Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
-  #     Dados[18],Dados[19],Dados[20])
+       #Dados[6],Dados[7],Dados[8],Dados[9],Dados[10],Dados[11],
+       #Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
+       #Dados[18],Dados[19],Dados[20])
 
 #alterarFase(5,1)
 
