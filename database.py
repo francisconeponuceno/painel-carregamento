@@ -1,7 +1,14 @@
 import sqlite3
 
 
-def criarTabela():
+#conectar ao banco
+def banco():
+    conect = sqlite3.connect('banco.db')
+    conect = conect.cursor()
+    return conect
+
+
+def TabCarrego():
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS carrego (     
@@ -12,23 +19,44 @@ def criarTabela():
         conf TEXT,
         placa TEXT,
         cub INTEGER,
-        classe TEXT,
-        icone TEXT,
-        frase TEXT
+        classe1 TEXT,
+        classe2 TEXT,
+        classe3 TEXT,
+        classe4 TEXT,
+        classe5 TEXT,
+        icone1 TEXT,
+        icone2 TEXT,
+        icone3 TEXT,
+        icone4 TEXT,
+        icone5 TEXT,
+        frase1 TEXT,
+        frase2 TEXT,
+        frase3 TEXT,
+        frase4 TEXT,
+        frase5 TEXT
         );
     """)
     conect.close()
 
+
 # Inserir um novo usuário
-Dados = ['T', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO',  'FABIO', 'KBI-6155', '80','fase','bi bi-truck','']
-def salvar(clt,mot,dest,conf,placa,cub,classe,icone,frase):
+Dados = ['C', 'EDVAR DE SOUSA DUARTE', 'CHAPADINHA',  'ARIMATÉIA', 'MUY-0350', '70',
+         'fase','fase','fase','fase','fase',
+         'bi bi-truck','bi bi-truck','bi bi-truck','bi bi-truck','bi bi-truck',
+         'EM ESPERA','CARREGANDO','AGUAR FATURAMENTO','FATURANDO','CONCLUÍDO']
+
+def salvar(clt,mot,dest,conf,placa,cub,casse1,classe2,classe3,classe4,classe5,
+           icone1,icone2,icone3,icone4,icone5,frase1,frase2,frase3,frase4,frase5):
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
-    
-    cursor.execute(f"INSERT INTO carrego(clt, mot, dest, conf, placa, cub, classe, icone, frase) VALUES(?,?,?,?,?,?,?,?,?)", [clt,mot,dest,conf,placa,cub,classe,icone,frase])
+    cursor.execute('''INSERT INTO carrego(clt, mot, dest, conf, placa, cub,
+                   classe1, classe2, classe3, classe4, classe5,
+                   icone1, icone2, icone3, icone4, icone5,
+                   frase1, frase2, frase3, frase4, frase5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                   [clt,mot,dest,conf,placa,cub,casse1,classe2,classe3,classe4,classe5,
+                    icone1,icone2,icone3,icone4,icone5,frase1,frase2,frase3,frase4,frase5])
     conect.commit()
-    conect.close()     
-
+    conect.close()
 
 #Consultar dados
 def consultarDados():
@@ -36,14 +64,18 @@ def consultarDados():
     cursor = conect.cursor()
     cursor.execute('SELECT * FROM carrego')
     registros = cursor.fetchall()
+    conect.close()
     return registros
+    
 
     
 #alterar dados 
-def alterarDados():
+def alterarFase(id,fase):
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
-    cursor.execute(f'UPDATE carrego WHERE id = {id}')
+    if fase == 1:
+        cursor.execute(f"UPDATE carrego SET classe = 'concluido', icone = 'bi bi-check2-circle', frase = 'CONCLUÍDO' WHERE id = {id}")
+
     conect.commit()
     conect.close()
 
@@ -61,9 +93,19 @@ def excluir(id):
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
-    cursor.execute(f'DROP TABLE carrego')
+    cursor.execute(f'DROP TABLE frase')
     conect.commit()
     conect.close()
 
-criarTabela()
-#salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],Dados[6],Dados[7],Dados[8])
+
+TabCarrego()
+
+
+#salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],
+ #      Dados[6],Dados[7],Dados[8],Dados[9],Dados[10],Dados[11],
+  #     Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
+  #     Dados[18],Dados[19],Dados[20])
+
+#alterarFase(5,1)
+
+
