@@ -43,7 +43,7 @@ body {
 }
 
 .card {
-    width: 1120px;
+    width: 1020px;
     padding: 10px;
     background-color: var(--azul2);
     display: flex;
@@ -51,18 +51,19 @@ body {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin: 10px 20px 10px 20px;
+    margin: 5px 20px 5px 20px;
     border-radius: 10px;
 }
 
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 60px;
 }
 
 .content {
-    width: 1100px;
+    width: 1000px;
     height: 55px;
     padding: 3px;
     border: 2px solid var(--branco);
@@ -101,14 +102,14 @@ nav .menu div h1 {
 }
 
 nav .menu .destino {
-    width: 400px;
+    width: 300px;
 }
 nav .menu .motorista {
-    width: 300px;
+    width: 200px;
 }
 
 nav .menu span {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding-top: 10px;
 }
  
@@ -122,12 +123,14 @@ img {
 .mae {
     width: 1100px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
 }
 
 .fase {
-    width: 253px;
-    height: 85px;
+    width: 197px;
+    height: 60px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -153,7 +156,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 .fase #IconP1 {
@@ -194,8 +197,8 @@ footer {
 
 /*ESTILO DA FASE CONCLUÍDO*/
 .concluido {
-    width: 253px;
-    height: 85px;
+    width: 197px;
+    height: 60px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--verde);
@@ -221,7 +224,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-bottom: 2px;
 }
 
@@ -233,8 +236,8 @@ footer {
 
 /*ESTILO DA FASE CANCELADO*/
 .cancelado {
-    width: 253px;
-    height: 85px;
+    width: 197px;
+    height: 60px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--vermelho2);
@@ -260,6 +263,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-bottom: 2px;
 }
