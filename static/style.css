@@ -30,10 +30,27 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--vermelho);
-    height: 70px;
+    height: 80px;
     color: var(--branco);
     font-size: 1.5rem;
 }
+
+.terceiro .painel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.terceiro .painel form {
+    margin-bottom: 10px;
+}
+
+.terceiro .painel form {
+    margin-bottom: 10px;
+}
+
 
 .principal {
     display: flex;
@@ -151,6 +168,7 @@ img {
     margin-bottom: 3px;
 }
 
+
 .fase .passo i {
     color: var(--vermelho);
     display: flex;
@@ -219,6 +237,14 @@ footer {
     margin-bottom: 3px;
 }
 
+.concluido .passo {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    color: var(--verde);
+    gap: 20px;
+}
+
 .concluido .passo i {
     color: var(--verde);
     display: flex;
@@ -258,8 +284,57 @@ footer {
     margin-bottom: 3px;
 }
 
+.cancelado .passo {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    color: var(--vermelho);
+    gap: 20px;
+}
+
 .cancelado .passo i {
     color: var(--vermelho2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 2px;
+}
+
+/*ESTILO DA FASE ADIADO*/
+.adiado {
+    width: 197px;
+    height: 60px;
+    color: var(--branco);
+    border-radius: 10px;
+    border: 3px solid var(--amarelo);
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+}
+
+.adiado .title {
+    display: flex;
+    height: 15px;
+    background-color: var(--amarelo);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.4rem;
+    margin-bottom: 3px;
+}
+
+.adiado .passo {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    color: var(--amarelo);
+    gap: 20px;
+}
+
+
+.adiado .passo i {
     display: flex;
     justify-content: center;
     align-items: center;
