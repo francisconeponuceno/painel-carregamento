@@ -67,14 +67,15 @@ def alterarFase(id,fase):
     cursor = conect.cursor()
     if fase == 1:
         cursor.execute(f"UPDATE carrego SET classe1 = 'concluido', icone1 = 'bi bi-check2-circle', frase1 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET icone2 = 'bi bi-truck', frase2 = 'carregando' WHERE id = {id}")
     if fase == 2:
-        cursor.execute(f"UPDATE carrego SET classe2 = 'concluido', icone2 = 'bi bi-check2-circle', frase2 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe2 = 'fase', icone2 = 'bi bi-cone-striped', frase2 = 'carregando' WHERE id = {id}" )
     if fase == 3:
-        cursor.execute(f"UPDATE carrego SET classe3 = 'concluido', icone3 = 'bi bi-check2-circle', frase3 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe3 = 'fase', icone3 = 'bi bi-cone-striped', frase3 = 'aguar faturamento' WHERE id = {id}")
     if fase == 4:
-        cursor.execute(f"UPDATE carrego SET classe4 = 'concluido', icone4 = 'bi bi-check2-circle', frase4 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe4 = 'fase', icone4 = 'bi bi-cone-striped', frase4 = 'faturando' WHERE id = {id}")
     if fase == 5:
-        cursor.execute(f"UPDATE carrego SET classe5 = 'concluido', icone5 = 'bi bi-check2-circle', frase5 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe5 = 'fase', icone5 = 'bi bi-cone-striped', frase5 = 'CONCLUÍDO' WHERE id = {id}")
 
     conect.commit()
     conect.close()
@@ -106,4 +107,4 @@ TabCarrego()
 # Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
 # Dados[18],Dados[19],Dados[20])
 
-# alterarFase(5,1)
+alterarFase(1,1)
