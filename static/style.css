@@ -30,10 +30,39 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--vermelho);
-    height: 70px;
+    height: 80px;
     color: var(--branco);
     font-size: 1.5rem;
 }
+
+.terceiro .painel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.terceiro .painel form {
+    margin-bottom: 10px;
+}
+
+.terceiro .painel form input{
+    height: 25px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 5px;
+    border: 1px solid var(--azul3);
+}
+
+#clt ,#cub {
+    width: 40px;
+}
+
+#mot ,#dest {
+    width: 300px;
+}
+
 
 .principal {
     display: flex;
@@ -43,28 +72,29 @@ body {
 }
 
 .card {
-    width: 1120px;
-    padding: 10px;
+    width: 1020px;
+    padding: 5px;
     background-color: var(--azul2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin: 10px 20px 10px 20px;
+    margin: 5px 20px 5px 20px;
     border-radius: 10px;
 }
 
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 60px;
 }
 
 .content {
-    width: 1100px;
-    height: 55px;
-    padding: 3px;
+    width: 1000px;
+    height: 45px;
+    padding: 2px;
     border: 2px solid var(--branco);
     border-radius: 5px;
     gap: 10px;
@@ -101,19 +131,19 @@ nav .menu div h1 {
 }
 
 nav .menu .destino {
-    width: 400px;
+    width: 300px;
 }
 nav .menu .motorista {
-    width: 300px;
+    width: 200px;
 }
 
 nav .menu span {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding-top: 10px;
 }
  
 img {
-    width: 45px;
+    width: 35px;
     border-radius: 50%;
 }
 
@@ -122,12 +152,14 @@ img {
 .mae {
     width: 1100px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
 }
 
 .fase {
-    width: 253px;
-    height: 85px;
+    width: 197px;
+    height: 60px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -148,12 +180,13 @@ img {
     margin-bottom: 3px;
 }
 
+
 .fase .passo i {
     color: var(--vermelho);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 .fase #IconP1 {
@@ -194,8 +227,8 @@ footer {
 
 /*ESTILO DA FASE CONCLUÍDO*/
 .concluido {
-    width: 253px;
-    height: 85px;
+    width: 197px;
+    height: 60px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--verde);
@@ -216,12 +249,20 @@ footer {
     margin-bottom: 3px;
 }
 
+.concluido .passo {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    color: var(--verde);
+    gap: 20px;
+}
+
 .concluido .passo i {
     color: var(--verde);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-bottom: 2px;
 }
 
@@ -233,8 +274,8 @@ footer {
 
 /*ESTILO DA FASE CANCELADO*/
 .cancelado {
-    width: 253px;
-    height: 85px;
+    width: 197px;
+    height: 60px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--vermelho2);
@@ -255,11 +296,60 @@ footer {
     margin-bottom: 3px;
 }
 
+.cancelado .passo {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    color: var(--vermelho);
+    gap: 20px;
+}
+
 .cancelado .passo i {
     color: var(--vermelho2);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    margin-bottom: 2px;
+}
+
+/*ESTILO DA FASE ADIADO*/
+.adiado {
+    width: 197px;
+    height: 60px;
+    color: var(--branco);
+    border-radius: 10px;
+    border: 3px solid var(--amarelo);
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+}
+
+.adiado .title {
+    display: flex;
+    height: 15px;
+    background-color: var(--amarelo);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.4rem;
+    margin-bottom: 3px;
+}
+
+.adiado .passo {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    color: var(--amarelo);
+    gap: 20px;
+}
+
+
+.adiado .passo i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
     margin-bottom: 2px;
 }

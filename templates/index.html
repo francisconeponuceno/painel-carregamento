@@ -14,6 +14,14 @@
     <section class="terceiro">
         <div class="painel">
             <h1>PAINEL DE CARREGAMENTO DIÁRIO!</h1>
+            <form action="/addCarregamento">
+                <input type="text" name="clt" id="clt" placeholder="clt">
+                <input type="text" name="mot" id="mot" placeholder="motorista">
+                <input type="text" name="dest" id="dest" placeholder="destino">
+                <input type="text" name="conf" id="conf" placeholder="conferente">
+                <input type="text" name="placa" id="placa" placeholder="placa">
+                <input type="text" name="cub" id="cub" placeholder="cub">
+            </form>
         </div>
     </section>
     
@@ -40,11 +48,11 @@
             <div class="mae">
                 <div class="{{item[7]}}">
                     <div class="title">
-                        <h1>EM ESPERA</h1>
+                        <h1>AGU CONF OU MOT.</h1>
                     </div>
                     <div class="passo">
-                        <i class="{{item[12]}}" id="IconP1"></i>
                         <p id="MsgP1">{{item[17]}}</p>
+                        <i class="{{item[12]}}" id="IconP1"></i>
                     </div>
                 </div>
                 <div class="{{item[8]}}">
@@ -52,8 +60,8 @@
                         <h1>CARREGANDO</h1>
                     </div>
                     <div class="passo">
-                        <i class="{{item[13]}}" id="IconP2"></i>
                         <p id="MsgP2">{{item[18]}}</p>
+                        <i class="{{item[13]}}" id="IconP2"></i>
                     </div>
                 </div>
         
@@ -62,8 +70,8 @@
                         <h1>AGUARD FATURAMENTO</h1>
                     </div>
                     <div class="passo">
-                        <i class="{{item[14]}}" id="IconP3"></i>
                         <p id="MsgP3">{{item[19]}}</p>
+                        <i class="{{item[14]}}" id="IconP3"></i>
                     </div>
                 </div>
                 <div class="{{item[10]}}">
@@ -71,8 +79,8 @@
                         <h1>FATURANDO</h1>
                     </div>
                     <div class="passo">
-                        <i class="{{item[15]}}" id="IconP4"></i>
                         <p id="MsgP4">{{item[20]}}</p>
+                        <i class="{{item[15]}}" id="IconP4"></i>
                     </div>
                 </div>
                 <div class="{{item[11]}}">
@@ -80,8 +88,8 @@
                         <h1>CONCLUÍDO</h1>
                     </div>
                     <div class="passo">
-                        <i class="{{item[16]}}" id="IconP5"></i>
                         <p id="MsgP5">{{item[21]}}</p>
+                        <i class="{{item[16]}}" id="IconP5"></i>
                     </div>
                 </div>
             </div>

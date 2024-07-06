@@ -67,19 +67,46 @@ def alterarFase(id,fase):
     cursor = conect.cursor()
     if fase == 1:
         cursor.execute(f"UPDATE carrego SET classe1 = 'concluido', icone1 = 'bi bi-check2-circle', frase1 = 'CONCLUÍDO' WHERE id = {id}")
-        cursor.execute(f"UPDATE carrego SET icone2 = 'bi bi-truck', frase2 = 'carregando' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET icone2 = 'bi bi-truck', frase2 = '' WHERE id = {id}")
     if fase == 2:
-        cursor.execute(f"UPDATE carrego SET classe2 = 'fase', icone2 = 'bi bi-cone-striped', frase2 = 'carregando' WHERE id = {id}" )
+        cursor.execute(f"UPDATE carrego SET classe2 = 'concluido', icone2 = 'bi bi-check2-circle', frase2 = 'CONCLUÍDO' WHERE id = {id}" )
+        cursor.execute(f"UPDATE carrego SET icone3 = 'bi bi-truck', frase3 = '' WHERE id = {id}")
     if fase == 3:
-        cursor.execute(f"UPDATE carrego SET classe3 = 'fase', icone3 = 'bi bi-cone-striped', frase3 = 'aguar faturamento' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe3 = 'concluido', icone3 = 'bi bi-check2-circle', frase3 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET icone4 = 'bi bi-truck', frase4 = '' WHERE id = {id}")
     if fase == 4:
-        cursor.execute(f"UPDATE carrego SET classe4 = 'fase', icone4 = 'bi bi-cone-striped', frase4 = 'faturando' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe4 = 'concluido', icone4 = 'bi bi-check2-circle', frase4 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET icone5 = 'bi bi-truck', frase5 = '' WHERE id = {id}")
     if fase == 5:
-        cursor.execute(f"UPDATE carrego SET classe5 = 'fase', icone5 = 'bi bi-cone-striped', frase5 = 'CONCLUÍDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe5 = 'concluido', icone5 = 'bi bi-check2-circle', frase5 = 'CONCLUÍDO' WHERE id = {id}")
+        
 
     conect.commit()
     conect.close()
 
+def normal(id,classe):
+    conect = sqlite3.connect('banco.db')
+    cursor = conect.cursor()
+    if classe == 'NORMAL':
+        cursor.execute(f"UPDATE carrego SET classe1 = 'fase', icone1 = 'bi bi-truck', frase1 = '' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe2 = 'fase', icone2 = 'bi bi-cone-striped', frase2 = '' WHERE id = {id}" )
+        cursor.execute(f"UPDATE carrego SET classe3 = 'fase', icone3 = 'bi bi-cone-striped', frase3 = '' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe4 = 'fase', icone4 = 'bi bi-cone-striped', frase4 = '' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe5 = 'fase', icone5 = 'bi bi-cone-striped', frase5 = '' WHERE id = {id}")
+    if classe == 'CANCELADO':
+        cursor.execute(f"UPDATE carrego SET classe1 = 'cancelado', icone1 = 'bi bi-x-circle', frase1 = 'CANCELADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe2 = 'cancelado', icone2 = 'bi bi-x-circle', frase2 = 'CANCELADO' WHERE id = {id}" )
+        cursor.execute(f"UPDATE carrego SET classe3 = 'cancelado', icone3 = 'bi bi-x-circle', frase3 = 'CANCELADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe4 = 'cancelado', icone4 = 'bi bi-x-circle', frase4 = 'CANCELADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe5 = 'cancelado', icone5 = 'bi bi-x-circle', frase5 = 'CANCELADO' WHERE id = {id}")
+    if classe == 'ADIADO':
+        cursor.execute(f"UPDATE carrego SET classe1 = 'adiado', icone1 = 'bi bi-arrow-repeat', frase1 = 'ADIADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe2 = 'adiado', icone2 = 'bi bi-arrow-repeat', frase2 = 'ADIADO' WHERE id = {id}" )
+        cursor.execute(f"UPDATE carrego SET classe3 = 'adiado', icone3 = 'bi bi-arrow-repeat', frase3 = 'ADIADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe4 = 'adiado', icone4 = 'bi bi-arrow-repeat', frase4 = 'ADIADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe5 = 'adiado', icone5 = 'bi bi-arrow-repeat', frase5 = 'ADIADO' WHERE id = {id}")
+    conect.commit()
+    conect.close()
 
 # excluír registro
 def excluir(id):
@@ -108,3 +135,7 @@ TabCarrego()
 # Dados[18],Dados[19],Dados[20])
 
 #alterarFase(1,1)
+<<<<<<< HEAD
+=======
+#normal(1,'NORMAL')
+>>>>>>> 545621422f8272038d13aa8c9987362d545f0fb1
