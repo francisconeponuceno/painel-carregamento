@@ -11,7 +11,11 @@ def index():
     return render_template("index.html", registro=dados)
 
 
-    
+@app.route("/addCarregamento", methods=["post"])
+def eddCarregamento():
+    clt = request.form.get('clt')
+    print(clt)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
-

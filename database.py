@@ -135,7 +135,4 @@ TabCarrego()
 # Dados[18],Dados[19],Dados[20])
 
 #alterarFase(1,1)
-<<<<<<< HEAD
-=======
-#normal(1,'NORMAL')
->>>>>>> 545621422f8272038d13aa8c9987362d545f0fb1
+#normal(2,'NORMAL')
