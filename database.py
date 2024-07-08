@@ -32,12 +32,6 @@ def TabCarrego():
     conect.close()
 
 
-# Inserir um novo usuário
-Dados = ['C', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FABIO', 'KBI-6155', '80',
-         'fase','fase','fase','fase','fase',
-         'bi bi-truck','bi bi-cone-striped','bi bi-cone-striped','bi bi-cone-striped','bi bi-cone-striped',
-         'EM ESPERA','CARREGANDO','AGUAR FATURAMENTO','FATURANDO','CONCLUÍDO']
-
 def salvar(clt,mot,dest,conf,placa,cub,casse1,classe2,classe3,classe4,classe5,
            icone1,icone2,icone3,icone4,icone5,frase1,frase2,frase3,frase4,frase5):
     conect = sqlite3.connect('banco.db')
@@ -116,7 +110,7 @@ def excluir(id):
     conect.commit()
     conect.close()
 
-
+#excluir(42)
 # eliminando a tabela
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')
@@ -134,5 +128,5 @@ TabCarrego()
 # Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
 # Dados[18],Dados[19],Dados[20])
 
-#alterarFase(1,1)
+alterarFase(45,1)
 #normal(2,'NORMAL')
