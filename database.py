@@ -135,4 +135,4 @@ TabCarrego()
 # Dados[18],Dados[19],Dados[20])
 
 #alterarFase(1,1)
-#normal(1,'NORMAL')
+#normal(2,'NORMAL')

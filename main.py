@@ -11,6 +11,7 @@ def index():
     return render_template("index.html", registro=dados)
 
 
+<<<<<<< HEAD
 @app.route('/cadastrar',methods=['POST','GET'])
 def cadastrar():
     CLT = request.form['clt']
@@ -19,6 +20,13 @@ def cadastrar():
 
 
     
+=======
+@app.route("/addCarregamento", methods=["post"])
+def eddCarregamento():
+    clt = request.form.get('clt')
+    print(clt)
+
+
+>>>>>>> a712e0694401f30755da623f3831f745cda73b76
 if __name__ == '__main__':
     app.run(debug=True)
-
