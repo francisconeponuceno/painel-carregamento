@@ -26,40 +26,45 @@
             </form>
         </div>
     </section>
-    
+    <div class="sequencia">
+        <div><h1>SEQ</h1></div>
+        <div><h1>CLT</h1></div>
+        <div class="motorista" id="mot"><h1>MOTORISTA</h1></div>
+        <div class="destino" id="dest"><h1>DESTINO</h1></div>
+        <div><h1>CONFERENTE</h1></div>
+        <div><h1>PLACA</h1></div>
+        <div><h1>CUB</h1></div>
+    </div>
     <div class="principal"> <!-- inicio da div principal -->
         
         {% for item in registro %}
      
         <div class="card"> 
-            <header class="content">
-                <nav>
-                    <div class="menu">
-                        <div><h1>SEQ</h1><span id="SEQ">{{item[0]}}</span></div>
-                        <div><h1>CLT</h1><span id="CLT">{{item[1]}}</span></div>
-                        <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">{{item[2]}}</span></div>
-                        <div class="destino"><h1>DESTINO</h1><span id="DEST">{{item[3]}}</span></div>
-                        <div><h1>CONFERENTE</h1><span id="CONF">{{item[4]}}</span></div>
-                        <div><h1>PLACA</h1><span id="PLACA">{{item[5]}}</span></div>
-                        <div><h1>CUB</h1><span id="CUB">{{item[6]}}</span></div>
-                    </div>
-                </nav>
-                <div class="logo">
-                    <img src="/static/images.jpg" alt="Não a imagem">
+            
+            <nav>
+                <div class="menu">
+                    <div><span id="SEQ">{{item[0]}}</span></div>
+                    <div><span id="CLT">{{item[1]}}</span></div>
+                    <div class="motorista"><span id="MOT">{{item[2]}}</span></div>
+                    <div class="destino"><span id="DEST">{{item[3]}}</span></div>
+                    <div><span id="CONF">{{item[4]}}</span></div>
+                    <div><span id="PLACA">{{item[5]}}</span></div>
+                    <div><span id="CUB">{{item[6]}}</span></div>
                 </div>
-            </header>
+            </nav>
+                
             <div class="mae">
-                <div class="{{item[7]}}">
-                    <div class="title">
-                        <h1>AGU CONF OU MOT.</h1>
+                    <div class="logo">
+                        <img src="/static/images.jpg" alt="Não a imagem">
                     </div>
-                    <div class="passo">
-                        <p id="MsgP1">{{item[17]}}</p>
+                
+                    <div class="{{item[7]}}">
+                        <h1>AGUARD</h1>
                         <i class="{{item[12]}}" id="IconP1"></i>
                     </div>
-                </div>
+              
                 <div class="{{item[8]}}">
-                    <div class="title" id="carregando">
+                    <div  class="title" id="carregando">
                         <h1>CARREGANDO</h1>
                     </div>
                     <div class="passo">
@@ -70,7 +75,7 @@
         
                 <div class="{{item[9]}}">
                     <div class="title" id="aguard-faturamento">
-                        <h1>AGUARD FATURAMENTO</h1>
+                        <h1>AGUARD FATU</h1>
                     </div>
                     <div class="passo">
                         <p id="MsgP3">{{item[19]}}</p>
