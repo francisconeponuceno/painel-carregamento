@@ -128,5 +128,5 @@ TabCarrego()
 # Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
 # Dados[18],Dados[19],Dados[20])
 
-alterarFase(44,1)
-#normal(2,'NORMAL')
+#alterarFase(44,1)
+#normal(44,'NORMAL')
