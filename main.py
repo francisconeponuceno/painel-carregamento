@@ -6,11 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-
     dados = consultarDados()
     return render_template("index.html", registro=dados)
         
-
 @app.route('/cadastrar',methods=['POST','GET'])
 def cadastrar():
     CLT = request.form['clt']
@@ -32,6 +30,5 @@ def cadastrar():
         return redirect("/")
 
 
-    
 if __name__ == '__main__':
     app.run(debug=True)
