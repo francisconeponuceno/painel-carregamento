@@ -63,14 +63,27 @@ body {
     width: 300px;
 }
 
-.indicadores {
-    
-    background-color: #ff0000;
+.pai {
+    display: flex;
+    background-color: #ffff;
 }
 
-.principal {
+.pai .grafico {
+    height: 700px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    background-color: #008000;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px 5px 5px 0;
+    border-radius: 3px;
+}
+
+.mestre .principal {
+    width: 950px;
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin: 5px 5px 5px 5px;
     padding: 0 5px 0 5px;
@@ -100,6 +113,7 @@ body {
     gap: 5px;
     margin-right: 10px;
     border-radius: 5px;
+    padding: 3px 0 3px 0;
 }
 
 .menu  {
@@ -115,23 +129,28 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
+    gap: 7px;
+}
+
+.menu h1 {
     font-size: 0.6rem;
-    gap: 5px;
 }
 
 .menu span {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .menu .destino {
-    width: 300px;
+    width: 250px;
+    
 }
 .menu .motorista {
-    width: 300px;
+    width: 250px;
+    
 }
 
 .menu #CONF {
-    width: 100px;
+    width: 50px;
 }
 
 /* ####### ESTILO DAS FASES  ########*/
@@ -142,7 +161,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0 3px 3px 3px;
 }
 
 .fase {
@@ -174,8 +193,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 700px;
-    
+    text-align: center;
 }
 
 .noCcarregamento h1 {
