@@ -109,10 +109,12 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: var(--azul3);
-    height: 100px;
+    height: 150px;
     margin: 5px 5px 5px 5px;
     gap: 10px;
     border-radius: 5px;
+    font-size: 0.5rem;
+    color: var(--branco);
 }
 
 .conf .barra{

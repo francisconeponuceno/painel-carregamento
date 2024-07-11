@@ -1,4 +1,5 @@
-from database import consultarDados, salvar
+from database import consultarDados, salvar, DadosGrafico
+from collectionpy.chart.apexcharts import Chart, CND_SRC
 from flask import Flask, render_template, request, redirect
 
 
@@ -7,7 +8,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     dados = consultarDados()
-    return render_template("index.html", registro=dados)
+    Dgrafico = DadosGrafico()
+    return render_template("index.html", registro=dados ,Dgrafico=Dgrafico)
         
 @app.route('/cadastrar',methods=['POST','GET'])
 def cadastrar():

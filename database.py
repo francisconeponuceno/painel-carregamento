@@ -55,6 +55,39 @@ def consultarDados():
     return registros
 
 
+# dados para os graficos
+def DadosGrafico():
+    cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCS = cubZC = 0
+    conect = sqlite3.connect('banco.db')
+    cursor = conect.cursor()
+    cursor.execute('SELECT * FROM carrego')
+    Dgrafico = cursor.fetchall()
+    conect.close()
+    for i in Dgrafico:
+        if i[4] == 'FABIO':
+            cubF += i[6]
+        if i[4] == 'KASSIO':
+            cubCS += i[6]
+        if i[4] == 'ARIMATEIA':
+            cubA += i[6]
+        if i[4] == 'VICENTE':
+            cubV += i[6]
+        if i[4] == 'KAZE':
+            cubKZ += i[6]
+        if i[4] == 'ZE CARLOS':
+            cubZC += i[6]
+        if i[1] == 'C':
+            cubC += i[6]
+        if i[1] == 'T':
+            cubT += i[6]
+        if i[1] == 'E':
+            cubE += i[6]
+        cubtotal += i[6]
+    dadoslidos = [cubtotal, cubF, cubCS, cubA, cubV, cubKZ, cubZC, cubC, cubT, cubE,]
+    return dadoslidos
+
+
+
 # alterar dados
 def alterarFase(id,fase):
     conect = sqlite3.connect('banco.db')
@@ -130,3 +163,4 @@ TabCarrego()
 
 #alterarFase(43,1)
 #normal(44,'NORMAL')
+

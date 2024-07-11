@@ -7,8 +7,11 @@
     <!--link do bostrep-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!--fim do link bootrep-->
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
     <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
 </head>
 <body class="body">
     <section class="terceiro">
@@ -79,36 +82,27 @@
             <h1>INDICADORES</h1>
             <div class="cubGeral">
                 <P>Cubagem Total</P>
-                <span>0</span>
+                <span>{{Dgrafico[0]}}</span>
             </div>
             <div class="cubtotal">
                 <div class="total">
                     <p>Cub Terceiro</p>
-                    <span>0</span>
+                    <span>{{Dgrafico[8]}}</span>
                 </div>
                 <div class="total">
                     <p>Cub Claudino</p>
-                    <span>0</span>
+                    <span>{{Dgrafico[7]}}</span>
                 </div>
                 <div class="total">
                     <p>Cub Escoamento</p>
-                    <span>0</span>
+                    <span>{{Dgrafico[9]}}</span>
                 </div>
             </div>
 
-            <div class="conf">
-
-                <div class="barra">
-                    
-                </div>
-                <div class="barra">
-                   
-                </div>
-                <div class="barra">
-                   
-                </div>
+            <div class="conf" id="chartdiv">
                 
             </div>
+            
         </div>
 
     </div>
@@ -125,6 +119,6 @@
     </footer>
 
     
-    
+    <script src="/static/script.js"></script>
 </body>
 </html>
