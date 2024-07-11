@@ -63,6 +63,8 @@ body {
     width: 300px;
 }
 
+
+/* ####### ESTILO DO PAINEL GRAFICO  ########*/
 .pai {
     display: flex;
     background-color: var(--azul1);
@@ -71,14 +73,57 @@ body {
 .pai .grafico {
     height: 700px;
     width: 100%;
-    display: flex;
     background-color: var(--azul2);
     justify-content: center;
-    align-items: center;
+    align-items: normal;
     text-align: center;
     margin: 5px 5px 5px 0;
     border-radius: 3px;
+    color: var(--branco);
 }
+
+.pai .grafico .cubtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.cubGeral{
+    background-color: var(--azul3);
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    
+}
+
+.pai .grafico .cubtotal .total{
+    width: 115px;
+    height: 30px;
+    background-color: var(--azul3);
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.pai .conf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--azul3);
+    height: 100px;
+    margin: 5px 5px 5px 5px;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.conf .barra{
+    width: 300px;
+    height: 20px;
+    background-color: var(--vermelho2);
+    margin-left: 10px;
+}
+
+/* ####### FIM DO ESTILO PAINEL GRÁFICO  ########*/
+
 
 .mestre .principal {
     width: 950px;
