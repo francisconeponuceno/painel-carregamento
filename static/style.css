@@ -117,18 +117,19 @@ body {
     color: var(--branco);
 }
 
-.conf .barra{
-    width: 300px;
-    height: 20px;
-    background-color: var(--vermelho2);
-    margin-left: 10px;
+#chartdiv2{
+    height: 330px;
+    justify-content: center;
+    color: var(--branco);
 }
+
+
 
 /* ####### FIM DO ESTILO PAINEL GRÁFICO  ########*/
 
 
 .mestre .principal {
-    width: 950px;
+    width: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;

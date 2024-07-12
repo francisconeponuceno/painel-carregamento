@@ -1,5 +1,4 @@
 from database import consultarDados, salvar, DadosGrafico
-from collectionpy.chart.apexcharts import Chart, CND_SRC
 from flask import Flask, render_template, request, redirect
 
 
