@@ -22,20 +22,91 @@ def main(page: ft.Page):
                     alignment=ft.alignment.center,
                     content=ft.Column(
                         [
-                            ft.Container(bgcolor="red", height=100),
-                            ft.Row(
-                                [
-                                    ft.Container(content=ft.Text("SEQ")),
-                                    ft.Container(content=ft.Text("SEQ")),
-                                    ft.Container(content=ft.Text("SEQ")),
-                                    ft.Container(content=ft.Text("SEQ")),
-                                    ft.Container(content=ft.Text("SEQ")),
-                                    ft.Container(content=ft.Text("SEQ")),
-                                    ft.Container(content=ft.Text("SEQ")),
-                                    ft.Container(content=ft.Text("SEQ")),
-                                ],
-                                expand=True,
-                                spacing=ft.MainAxisAlignment.SPACE_BETWEEN,
+                            ft.Container(
+                                bgcolor="#0505FF",
+                                height=100,
+                                padding=ft.padding.only(left=10, right=10),
+                                content=ft.Row(
+                                    controls=[
+                                        ft.Image(
+                                            src="img/socimol.png", width=120, height=70
+                                        ),
+                                        ft.Text(
+                                            "PAINEL DE CARREGAMENTO",
+                                            color="white",
+                                            size=30,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Image(
+                                            src="img/socimol.png", width=120, height=70
+                                        ),
+                                    ],
+                                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                ),
+                            ),
+                            ft.Container(
+                                bgcolor="#FF0000",
+                                height=20,
+                                padding=ft.padding.only(left=10, right=10),
+                                content=ft.Row(
+                                    controls=[
+                                        ft.Text(
+                                            "SEQ",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "CLT",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "MOTORISTA",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "DESTINO",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "CONFERENTE",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "PLACA",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "CUB",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "STATUS",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                        ft.Text(
+                                            "IMG",
+                                            color="white",
+                                            size=10,
+                                            weight="BOLD",
+                                        ),
+                                    ],
+                                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                ),
                             ),
                         ]
                     ),
@@ -44,7 +115,14 @@ def main(page: ft.Page):
                     expand=1,
                     bgcolor="blue",
                     alignment=ft.alignment.center,
-                    content=ft.Column([ft.Container(bgcolor="red", height=100)]),
+                    content=ft.Column(
+                        [
+                            ft.Container(
+                                bgcolor="red",
+                                height=100,
+                            )
+                        ]
+                    ),
                 ),
             ],
         ),
