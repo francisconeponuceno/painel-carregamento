@@ -54,70 +54,99 @@ def main(page: ft.Page):
                                     alignment=ft.MainAxisAlignment.START,
                                     expand=True,
                                     controls=[
+
                                         ft.DataTable(
                                             expand=True,
-                                            bgcolor="yellow",
                                             heading_row_height=30,
-                                            # column_spacing=50,
+                                            column_spacing=20,
                                             heading_row_color="#FF0000",
                                             data_row_color="#D9E6FE",
-                                            column_spacing=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                            #column_spacing=ft.MainAxisAlignment.SPACE_BETWEEN,
                                             columns=[
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "SEQ", size=11, color="white"
-                                                    )
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "CLT", size=11, color="white"
-                                                    )
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "MOTORISTA",
-                                                        size=11,
-                                                        color="white",
-                                                        width=100
-                                                    )
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "DESTINO",
-                                                        size=11,
-                                                        color="white",
-                                                        width=100
-                                                    )
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "CONFERENTE",
-                                                        size=11,
-                                                        color="white",
-                                                    )
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "PLACA", size=11, color="white"
-                                                    )
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "CUB", size=11, color="white"
-                                                    ),
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "STATUS", size=11, color="white"
-                                                    )
-                                                ),
-                                                ft.DataColumn(
-                                                    ft.Text(
-                                                        "IMG", size=11, color="white"
-                                                    )
-                                                ),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("SEQ", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("CLT", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("MOTORISTA", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("DESTINO", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("CONFERENTE", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("PLACA", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("CUB", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("STATUS", size=11, color="white"))),
+                                                ft.DataColumn(ft.Container(expand=True,content=ft.Text("IMG", size=11, color="white"))),
                                             ],
                                             rows=[
+                                                ft.DataRow(
+                                                    [
+                                                        ft.DataCell(
+                                                            ft.Text(
+                                                                "1",
+                                                                size=11,
+                                                                weight="BOLD",
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Text(
+                                                                "T",
+                                                                size=11,
+                                                                weight="BOLD",
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Text(
+                                                                "JOAQUIM MAIA PEREIRA",
+                                                                size=11,
+                                                                weight="BOLD",
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Text(
+                                                                "PARAIBA/RIO G DO NORTE/PERNAMBUCO",
+                                                                size=11,
+                                                                weight="BOLD",
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Text(
+                                                                "ARIMATÉIA",
+                                                                size=11,
+                                                                weight="BOLD",
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Text(
+                                                                "KBI-6155",
+                                                                size=11,
+                                                                weight="BOLD",
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Text(
+                                                                "CUB",
+                                                                size=11,
+                                                                weight="BOLD",
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Container(
+                                                                bgcolor="green",
+                                                                padding=5,
+                                                                border_radius=20,
+                                                                content=ft.Text(
+                                                                    "CARREGANDO",
+                                                                    size=11,
+                                                                    weight="BOLD",
+                                                                ),
+                                                            )
+                                                        ),
+                                                        ft.DataCell(
+                                                            ft.Image(
+                                                                "img/img_fabio.png",
+                                                                border_radius=50,
+                                                                width=45,
+                                                                height=45
+                                                            )
+                                                        ),
+                                                    ],
+                                                ),
                                                 ft.DataRow(
                                                     [
                                                         ft.DataCell(
@@ -185,6 +214,8 @@ def main(page: ft.Page):
                                                             ft.Image(
                                                                 "img/img_fabio.png",
                                                                 border_radius=50,
+                                                                width=45,
+                                                                height=45
                                                             )
                                                         ),
                                                     ],
@@ -224,9 +255,9 @@ def main(page: ft.Page):
                                     
                                 ),
                             ),
-                            ft.Container(expand=True, bgcolor="green"),
-                            ft.Container(expand=True, bgcolor="black"),
-                            ft.Container(expand=True, bgcolor="green"),
+                            ft.Container(expand=True, bgcolor="#D9E6FE"),
+                            ft.Container(expand=True, bgcolor="white"),
+                            ft.Container(expand=True, bgcolor="#D9E6FE"),
                         ],
                         spacing=0,
                     ),
