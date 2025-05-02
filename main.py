@@ -1,5 +1,5 @@
 import flet as ft
-
+from database import *
 
 
 def main(page: ft.Page):
@@ -9,6 +9,8 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 0
     page.spacing = 0
+
+    dados = consultarDados()
     container = ft.Container(
         bgcolor="WHITE",
         expand=True,
@@ -27,7 +29,7 @@ def main(page: ft.Page):
                             ft.Container(
                                 margin=0,
                                 bgcolor="#0505FF",
-                                height=100,
+                                height=80,
                                 padding=ft.padding.only(left=10, right=10),
                                 content=ft.Row(
                                     controls=[
@@ -230,29 +232,28 @@ def main(page: ft.Page):
                 ),
                 ft.Container(
                     expand=1,
-                    bgcolor="blue",
+                    bgcolor="red",
                     alignment=ft.alignment.center,
                     content=ft.Column(
                         [
                             ft.Container(
-                                bgcolor="red",
+                                margin=ft.margin.only(left=10, right=10),
                                 height=80,
                                 content=ft.Row(
-                                    [
+                                    controls=[
                                         ft.Container(
-                                            bgcolor="white", width=100, height=60,border_radius=10
+                                            bgcolor="white",height=60,border_radius=10,expand=True
                                         ),
                                         ft.Container(
-                                            bgcolor="white", width=100, height=60,border_radius=10
+                                            bgcolor="white",height=60,border_radius=10,expand=True
                                         ),
                                         ft.Container(
-                                            bgcolor="white", width=100, height=60,border_radius=10
+                                            bgcolor="white",height=60,border_radius=10,expand=True
                                         ),
                                         ft.Container(
-                                            bgcolor="white", width=100, height=60,border_radius=10
+                                            bgcolor="white",height=60,border_radius=10,expand=True
                                         ),
-                                    ],alignment=ft.MainAxisAlignment.SPACE_AROUND
-                                    
+                                    ],     
                                 ),
                             ),
                             ft.Container(expand=True, bgcolor="#D9E6FE"),
@@ -266,7 +267,8 @@ def main(page: ft.Page):
         ),
     )
 
+    
     page.add(container)
 
-
-ft.app(target=main)
+if __name__ == "__main__":
+    ft.app(target=main)
