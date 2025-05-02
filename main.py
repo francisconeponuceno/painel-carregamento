@@ -268,5 +268,5 @@ def main(page: ft.Page):
 
     page.add(container)
 
-
-ft.app(target=main)
+if __name__ == '__name__':
+    ft.app(target=main)
