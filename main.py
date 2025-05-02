@@ -1,5 +1,5 @@
 import flet as ft
-from flet import WEB_BROWSER
+
 
 
 def main(page: ft.Page):
@@ -268,5 +268,5 @@ def main(page: ft.Page):
 
     page.add(container)
 
-if __name__ == '__name__':
-    ft.app(target=main)
+
+ft.app(target=main)
