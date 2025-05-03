@@ -32,21 +32,19 @@ def main(page: ft.Page):
         rows=[]    
     )
     for i in dados:
-        
         row = ft.DataRow(
             cells=[
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
-                ft.DataCell(ft.Text(f"1")),
+                ft.DataCell(ft.Text(f"{i[0]}",size=11,weight='BOLD')),
+                ft.DataCell(ft.Text(f"{i[1]}",size=11,weight='BOLD')),
+                ft.DataCell(ft.Text(f"{i[2]}",size=11,weight='BOLD')),
+                ft.DataCell(ft.Text(f"{i[3]}",size=11,weight='BOLD')),
+                ft.DataCell(ft.Text(f"{i[4]}",size=11,weight='BOLD')),
+                ft.DataCell(ft.Text(f"{i[5]}",size=11,weight='BOLD')),
+                ft.DataCell(ft.Text(f"{i[6]}",size=11,weight='BOLD')),
+                ft.DataCell(ft.Container(ft.Text(f"{i[7]}",size=11,weight='BOLD',text_align='center'),bgcolor='green',padding=5,border_radius=20,width=90,)),
+                ft.DataCell(ft.Container(ft.Image(src=f"{i[8]}",width=45,height=45,border_radius=50))),
             ]
         )
-        print(i)
         tabela.rows.append(row)
 
     container = ft.Container(
@@ -138,7 +136,7 @@ def main(page: ft.Page):
             ],
         ),
     )
-    
+
     page.add(container)
 
 if __name__ == "__main__":

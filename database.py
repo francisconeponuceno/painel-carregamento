@@ -86,6 +86,6 @@ def excluir(id):
 
 #salvar('T','SILVAN ALVES CHAVES','FORTALEZA','CASSIO','QRZ-2B31','80','AGUARD','img/socimol.png')
 
-#alterarFase(3,'FATURANDO')
+#alterarFase(1,'img/img_fabio.png')
 
 
