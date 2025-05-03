@@ -265,4 +265,4 @@ def main(page: ft.Page):
     page.add(container)
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(target=main,view=ft.WEB_BROWSER)
