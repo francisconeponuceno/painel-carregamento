@@ -63,7 +63,6 @@ def main(page: ft.Page):
                                             column_spacing=20,
                                             heading_row_color="#FF0000",
                                             data_row_color="#D9E6FE",
-                                            #column_spacing=ft.MainAxisAlignment.SPACE_BETWEEN,
                                             columns=[
                                                 ft.DataColumn(ft.Container(expand=True,content=ft.Text("SEQ", size=11, color="white"))),
                                                 ft.DataColumn(ft.Container(expand=True,content=ft.Text("CLT", size=11, color="white"))),
@@ -75,16 +74,11 @@ def main(page: ft.Page):
                                                 ft.DataColumn(ft.Container(expand=True,content=ft.Text("STATUS", size=11, color="white"))),
                                                 ft.DataColumn(ft.Container(expand=True,content=ft.Text("IMG", size=11, color="white"))),
                                             ],
+                                        
                                             rows=[
                                                 ft.DataRow(
                                                     [
-                                                        ft.DataCell(
-                                                            ft.Text(
-                                                                "1",
-                                                                size=11,
-                                                                weight="BOLD",
-                                                            )
-                                                        ),
+                                                        ft.DataCell(ft.Text(f"1",size=11,weight="BOLD",)),
                                                         ft.DataCell(
                                                             ft.Text(
                                                                 "T",
