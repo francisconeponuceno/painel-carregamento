@@ -10,7 +10,7 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
-    
+    status = ft.Ref[ft.Text]()
 
     dados = consultarDados()
     tabela = ft.DataTable(
@@ -46,6 +46,7 @@ def main(page: ft.Page):
                 ft.DataCell(
                     ft.Container(
                         ft.Text(
+                            ref = status
                             f"{i[7]}",
                             size=11,
                             weight="BOLD",
