@@ -1,7 +1,7 @@
 import flet as ft
 from database import *
 
-
+# CONFIGURAÇÕES DA PAGINA
 def main(page: ft.Page):
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
@@ -10,15 +10,23 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
+    # VARIÁVEIS
     status = ft.Ref[ft.Container]()
 
-    dados = consultarDados()
+    # carrego = ['E', 'ELISVALDO DA ROCHA', 'MARANHAO', 'ZE CARLOS', 'GLV-7716','80','CONCLUIDO','img/img_zecarlos.png']
+    # salvar(carrego[0],carrego[1],carrego[2],carrego[3],carrego[4],carrego[5],carrego[6],carrego[7])
+
+    dados = consultarDados() # VARIÁVEL QUE RECEBE OS DADOS DO BANCO, ATRAVÉS DA FUNÇÃO consultaDdados()
+
+    # CRIAÇÃO DA TABELA DE CARREGO
     tabela = ft.DataTable(
         expand=True,
         heading_row_height=30,
         column_spacing=20,
         heading_row_color="#FF0000",
         data_row_color="#D9E6FE",
+        
+        # CABEÇALHO DA TABELA
         columns=[
             ft.DataColumn(ft.Container(expand=True,content=ft.Text("SEQ", size=11, color="white"))),
             ft.DataColumn(ft.Container(expand=True,content=ft.Text("CLT", size=11, color="white"))),
@@ -30,9 +38,10 @@ def main(page: ft.Page):
             ft.DataColumn(ft.Container(expand=True,content=ft.Text("STATUS", size=11, color="white"))),
             ft.DataColumn(ft.Container(expand=True,content=ft.Text("IMG", size=11, color="white"))),
         ],
-    
+        
         rows=[]    
     )
+    # AQUI COMERÇA A CRIAÇAO DAS LINHAS DA TABELA
     for i in dados:
         row = ft.DataRow(
             cells=[
@@ -53,7 +62,7 @@ def main(page: ft.Page):
                             color="white",
                         ),
                         ref=status,
-                        bgcolor="#008000",
+                        bgcolor="#0505FF",
                         padding=5,
                         border_radius=20,
                         width=90,
@@ -61,13 +70,17 @@ def main(page: ft.Page):
                 ),
                 ft.DataCell(
                     ft.Container(
-                        ft.Image(src=f"{i[8]}", width=45, height=45, border_radius=50)
+                        ft.Image(src=f"{i[8]}", width=45, height=45, border_radius=50),
                     )
                 ),
             ]
         )
+        if i[7] == 'CONCLUIDO':
+            status.current.bgcolor = "#008000"
         tabela.rows.append(row)
+        page.update()
 
+    # CONTAINER PRINCIPAL
     container = ft.Container(
         bgcolor="WHITE",
         expand=True,
@@ -77,7 +90,6 @@ def main(page: ft.Page):
             controls=[
                 ft.Container(
                     expand=2,
-                    bgcolor="white",
                     alignment=ft.alignment.center,
                     content=ft.Column(
                         expand=True,
@@ -107,15 +119,29 @@ def main(page: ft.Page):
                                 ),
                             ),
                             ft.Container(
+                                bgcolor="green",
+                                height=30,
+                                padding=ft.padding.only(left=10, right=10),
+                                content=ft.Row(
+                                    controls=[
+                                        ft.TextField(label='clt',text_align='center',width=60),
+                                        ft.TextField(label='mot',width=250),
+                                        ft.TextField(label='dest',width=250),
+                                        ft.TextField(label='conf',width=100),
+                                        ft.TextField(label='placa',width=100),
+                                        ft.TextField(label='cub',width=100),
+                                    ],
+                                    alignment=ft.MainAxisAlignment.SPACE_AROUND
+                                    
+                                ),
+                            ),
+                            ft.Container(
                                 expand=True,
                                 alignment=ft.alignment.top_center,
                                 content=ft.Row(
                                     alignment=ft.MainAxisAlignment.START,
                                     expand=True,
-                                    controls=[
-                                        tabela
-                                        
-                                    ],
+                                    controls=[tabela],
                                 ),
                             ),
                         ],
@@ -133,18 +159,30 @@ def main(page: ft.Page):
                                 content=ft.Row(
                                     controls=[
                                         ft.Container(
-                                            bgcolor="white",height=60,border_radius=10,expand=True
+                                            bgcolor="white",
+                                            height=60,
+                                            border_radius=10,
+                                            expand=True,
                                         ),
                                         ft.Container(
-                                            bgcolor="white",height=60,border_radius=10,expand=True
+                                            bgcolor="white",
+                                            height=60,
+                                            border_radius=10,
+                                            expand=True,
                                         ),
                                         ft.Container(
-                                            bgcolor="white",height=60,border_radius=10,expand=True
+                                            bgcolor="white",
+                                            height=60,
+                                            border_radius=10,
+                                            expand=True,
                                         ),
                                         ft.Container(
-                                            bgcolor="white",height=60,border_radius=10,expand=True
+                                            bgcolor="white",
+                                            height=60,
+                                            border_radius=10,
+                                            expand=True,
                                         ),
-                                    ],     
+                                    ],
                                 ),
                             ),
                             ft.Container(expand=True, bgcolor="#D9E6FE"),
