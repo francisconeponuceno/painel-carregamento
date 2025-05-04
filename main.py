@@ -10,6 +10,9 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
+    def cadastrar(e):
+        pass
+
     # VARIÁVEIS
     status = ft.Ref[ft.Container]()
 
@@ -17,6 +20,15 @@ def main(page: ft.Page):
     # salvar(carrego[0],carrego[1],carrego[2],carrego[3],carrego[4],carrego[5],carrego[6],carrego[7])
 
     dados = consultarDados() # VARIÁVEL QUE RECEBE OS DADOS DO BANCO, ATRAVÉS DA FUNÇÃO consultaDdados()
+
+    # CRIAÇÃO DOS INPUTS DOS CARREGOS
+    CLT = ft.TextField(label='clt',text_align='center',width=60,content_padding=0)
+    MOT = ft.TextField(label='mot',text_align='center',width=250,content_padding=0)
+    DEST = ft.TextField(label='dest',text_align='center',width=250,content_padding=0)
+    CONF = ft.TextField(label='conf',text_align='center',width=140,content_padding=0)
+    PLACA = ft.TextField(label='placa',text_align='center',width=100,content_padding=0)
+    CUB = ft.TextField(label='cub',text_align='center',width=60,content_padding=0)
+    ADD = ft.Container(content=ft.Text('+',text_align='center',size=15),bgcolor='blue',width=30,height=25,border_radius=40,on_click=cadastrar)
 
     # CRIAÇÃO DA TABELA DE CARREGO
     tabela = ft.DataTable(
@@ -119,20 +131,13 @@ def main(page: ft.Page):
                                 ),
                             ),
                             ft.Container(
-                                bgcolor="green",
                                 height=30,
                                 padding=ft.padding.only(left=10, right=10),
                                 content=ft.Row(
                                     controls=[
-                                        ft.TextField(label='clt',text_align='center',width=60),
-                                        ft.TextField(label='mot',width=250),
-                                        ft.TextField(label='dest',width=250),
-                                        ft.TextField(label='conf',width=100),
-                                        ft.TextField(label='placa',width=100),
-                                        ft.TextField(label='cub',width=100),
+                                        CLT, MOT, DEST, CONF, PLACA, CUB, ADD
                                     ],
-                                    alignment=ft.MainAxisAlignment.SPACE_AROUND
-                                    
+                                    alignment=ft.MainAxisAlignment.SPACE_AROUND,
                                 ),
                             ),
                             ft.Container(
