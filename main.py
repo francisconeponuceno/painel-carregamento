@@ -10,26 +10,41 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
+    # CRIAÇÃO DOS INPUTS DOS CARREGOS
+    CLT = ft.TextField(label='clt',text_align='center',text_size=10,width=30,content_padding=0,ref=input_clt)
+    MOT = ft.TextField(label='mot',text_align='center',text_size=10,width=200,content_padding=0,ref=input_mot)
+    DEST = ft.TextField(label='dest',text_align='center',text_size=10,width=200,content_padding=0,ref=input_dest)
+    CONF = ft.TextField(label='conf',text_align='center',text_size=10,width=100,content_padding=0,ref=input_conf)
+    PLACA = ft.TextField(label='placa',text_align='center',text_size=10,width=60,content_padding=0,ref=input_placa)
+    CUB = ft.TextField(label='cub',text_align='center',text_size=10,width=40,content_padding=0,ref=input_cub)
+    ADD = ft.Container(content=ft.Text('+',text_align='center',size=15),bgcolor='blue',width=30,height=25,border_radius=40,on_click=cadastrar)
+    
+    input_clt = ft.Ref[ft.TextField]()
+    input_mot = ft.Ref[ft.TextField]()
+    input_dest = ft.Ref[ft.TextField]()
+    input_conf = ft.Ref[ft.TextField]()
+    input_placa = ft.Ref[ft.TextField]()
+    input_cub = ft.Ref[ft.TextField]()
+    img = 'assets/padrao'
+    
     def cadastrar(e):
-        pass
+        salvar(
+            input_clt.current.value,
+            input_mot.current.value,
+            input_dest.current.value,
+            input_conf.current.value,
+            input_placa.current.value,
+            input_cub.current.value
+        )
 
     # VARIÁVEIS
     status = ft.Ref[ft.Container]()
 
-    # carrego = ['E', 'ELISVALDO DA ROCHA', 'MARANHAO', 'ZE CARLOS', 'GLV-7716','80','CONCLUIDO','img/img_zecarlos.png']
-    # salvar(carrego[0],carrego[1],carrego[2],carrego[3],carrego[4],carrego[5],carrego[6],carrego[7])
+    
 
     dados = consultarDados() # VARIÁVEL QUE RECEBE OS DADOS DO BANCO, ATRAVÉS DA FUNÇÃO consultaDdados()
 
-    # CRIAÇÃO DOS INPUTS DOS CARREGOS
-    CLT = ft.TextField(label='clt',text_align='center',width=60,content_padding=0)
-    MOT = ft.TextField(label='mot',text_align='center',width=250,content_padding=0)
-    DEST = ft.TextField(label='dest',text_align='center',width=250,content_padding=0)
-    CONF = ft.TextField(label='conf',text_align='center',width=140,content_padding=0)
-    PLACA = ft.TextField(label='placa',text_align='center',width=100,content_padding=0)
-    CUB = ft.TextField(label='cub',text_align='center',width=60,content_padding=0)
-    ADD = ft.Container(content=ft.Text('+',text_align='center',size=15),bgcolor='blue',width=30,height=25,border_radius=40,on_click=cadastrar)
-
+    
     # CRIAÇÃO DA TABELA DE CARREGO
     tabela = ft.DataTable(
         expand=True,
@@ -131,7 +146,8 @@ def main(page: ft.Page):
                                 ),
                             ),
                             ft.Container(
-                                height=30,
+                                height=25,
+                                margin=ft.margin.all(3),
                                 padding=ft.padding.only(left=10, right=10),
                                 content=ft.Row(
                                     controls=[
