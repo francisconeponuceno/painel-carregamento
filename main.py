@@ -25,9 +25,6 @@ def main(page: ft.Page):
     CONF = ft.TextField(label='conf',text_align='center',text_size=10,width=100,content_padding=0,ref=input_conf)
     PLACA = ft.TextField(label='placa',text_align='center',text_size=10,width=60,content_padding=0,ref=input_placa)
     CUB = ft.TextField(label='cub',text_align='center',text_size=10,width=40,content_padding=0,ref=input_cub)
-    ADD = ft.Container(content=ft.Text('+',text_align='center',size=15),bgcolor='blue',width=30,height=25,border_radius=40,on_click=cadastrar)
-    
-    
     
     def cadastrar(e):
         try:
@@ -43,8 +40,10 @@ def main(page: ft.Page):
                 'AGUARD',
                 img_conf
             )
+            page.update()
         except:
             return
+    ADD = ft.Container(content=ft.Text('+',text_align='center',size=15),bgcolor='blue',width=30,height=25,border_radius=40,on_click=cadastrar)
 
     # VARIÁVEIS
     status = ft.Ref[ft.Container]()
