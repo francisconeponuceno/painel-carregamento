@@ -16,7 +16,6 @@ def main(page: ft.Page):
     input_conf = ft.Ref[ft.TextField]()
     input_placa = ft.Ref[ft.TextField]()
     input_cub = ft.Ref[ft.TextField]()
-    img_conf = 'assets/padrao'
 
     # CRIAÇÃO DOS INPUTS DOS CARREGOS
     CLT = ft.TextField(label='clt',text_align='center',text_size=10,width=30,content_padding=0,ref=input_clt)
@@ -25,11 +24,35 @@ def main(page: ft.Page):
     CONF = ft.TextField(label='conf',text_align='center',text_size=10,width=100,content_padding=0,ref=input_conf)
     PLACA = ft.TextField(label='placa',text_align='center',text_size=10,width=60,content_padding=0,ref=input_placa)
     CUB = ft.TextField(label='cub',text_align='center',text_size=10,width=40,content_padding=0,ref=input_cub)
-    
+
+    def foto_conferente():
+        if input_conf.current.value == "ARIMATEIA":
+            return 'assets/arimateia.jpg'
+        if input_conf.current.value == "VICENTE":
+            return 'assets/vicente.png'
+        if input_conf.current.value == "ZE CARLOS":
+            return 'assets/zecarlos.png'
+        if input_conf.current.value == "CASSIO":
+            return 'assets/cassio.png'
+        if input_conf.current.value == "RAIONE":
+            return 'assets/raione.png'
+        if input_conf.current.value == "FERNANDO":
+            return 'assets/fernando.png'
+        if input_conf.current.value == "LUCAS":
+            return 'assets/lucas.png'
+        if input_conf.current.value == "FABIO":
+            return 'assets/fabio.png'
+        if input_conf.current.value == "CASE":
+            return 'assets/caze.jpg'
+        else: 
+            return 'assets/padrao.jpg'
+        
+
     def cadastrar(e):
         try:
             if input_mot.current.value == '' or input_dest.current.value == '' or input_placa.current.value == '':
                 return
+            img_conf = foto_conferente()
             salvar(
                 input_clt.current.value,
                 input_mot.current.value,
@@ -56,7 +79,6 @@ def main(page: ft.Page):
         column_spacing=20,
         heading_row_color="#FF0000",
         data_row_color="#D9E6FE",
-        
         # CABEÇALHO DA TABELA
         columns=[
             ft.DataColumn(ft.Container(expand=True,content=ft.Text("SEQ", size=11, color="white"))),
@@ -70,7 +92,7 @@ def main(page: ft.Page):
             ft.DataColumn(ft.Container(expand=True,content=ft.Text("IMG", size=11, color="white"))),
         ],
         
-        rows=[]    
+        rows=[],
     )
     # AQUI COMERÇA A CRIAÇAO DAS LINHAS DA TABELA
     for i in dados:
@@ -104,7 +126,7 @@ def main(page: ft.Page):
                         ft.Image(src=f"{i[8]}", width=45, height=45, border_radius=50),
                     )
                 ),
-            ]
+            ],
         )
         if i[7] == 'CONCLUIDO':
             status.current.bgcolor = "#008000"
@@ -167,6 +189,7 @@ def main(page: ft.Page):
                                     alignment=ft.MainAxisAlignment.START,
                                     expand=True,
                                     controls=[tabela],
+                                    
                                 ),
                             ),
                         ],
