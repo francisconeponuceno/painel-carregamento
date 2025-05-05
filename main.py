@@ -10,15 +10,6 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
-    # CRIAÇÃO DOS INPUTS DOS CARREGOS
-    CLT = ft.TextField(label='clt',text_align='center',text_size=10,width=30,content_padding=0)
-    MOT = ft.TextField(label='mot',text_align='center',text_size=10,width=200,content_padding=0)
-    DEST = ft.TextField(label='dest',text_align='center',text_size=10,width=200,content_padding=0)
-    CONF = ft.TextField(label='conf',text_align='center',text_size=10,width=100,content_padding=0)
-    PLACA = ft.TextField(label='placa',text_align='center',text_size=10,width=60,content_padding=0)
-    CUB = ft.TextField(label='cub',text_align='center',text_size=10,width=40,content_padding=0)
-    ADD = ft.Container(content=ft.Text('+',text_align='center',size=15),bgcolor='blue',width=30,height=25,border_radius=40,on_click=cadastrar)
-    
     input_clt = ft.Ref[ft.TextField]()
     input_mot = ft.Ref[ft.TextField]()
     input_dest = ft.Ref[ft.TextField]()
@@ -26,12 +17,22 @@ def main(page: ft.Page):
     input_placa = ft.Ref[ft.TextField]()
     input_cub = ft.Ref[ft.TextField]()
     img_conf = 'assets/padrao'
+
+    # CRIAÇÃO DOS INPUTS DOS CARREGOS
+    CLT = ft.TextField(label='clt',text_align='center',text_size=10,width=30,content_padding=0,ref=input_clt)
+    MOT = ft.TextField(label='mot',text_align='center',text_size=10,width=200,content_padding=0,ref=input_mot)
+    DEST = ft.TextField(label='dest',text_align='center',text_size=10,width=200,content_padding=0,ref=input_dest)
+    CONF = ft.TextField(label='conf',text_align='center',text_size=10,width=100,content_padding=0,ref=input_conf)
+    PLACA = ft.TextField(label='placa',text_align='center',text_size=10,width=60,content_padding=0,ref=input_placa)
+    CUB = ft.TextField(label='cub',text_align='center',text_size=10,width=40,content_padding=0,ref=input_cub)
+    ADD = ft.Container(content=ft.Text('+',text_align='center',size=15),bgcolor='blue',width=30,height=25,border_radius=40,on_click=cadastrar)
+    
+    
     
     def cadastrar(e):
         try:
             if input_mot.current.value == '' or input_dest.current.value == '' or input_placa.current.value == '':
                 return
-            
             salvar(
                 input_clt.current.value,
                 input_mot.current.value,
@@ -49,7 +50,6 @@ def main(page: ft.Page):
     status = ft.Ref[ft.Container]()
     dados = consultarDados() # VARIÁVEL QUE RECEBE OS DADOS DO BANCO, ATRAVÉS DA FUNÇÃO consultaDdados()
 
-    
     # CRIAÇÃO DA TABELA DE CARREGO
     tabela = ft.DataTable(
         expand=True,
@@ -135,7 +135,7 @@ def main(page: ft.Page):
                                 content=ft.Row(
                                     controls=[
                                         ft.Image(
-                                            src="img/socimol.png", width=120, height=70
+                                            src="assets/socimol.png", width=120, height=70
                                         ),
                                         ft.Text(
                                             "PAINEL DE CARREGAMENTO",
@@ -144,7 +144,7 @@ def main(page: ft.Page):
                                             weight="BOLD",
                                         ),
                                         ft.Image(
-                                            src="img/socimol.png", width=120, height=70
+                                            src="assets/socimol.png", width=120, height=70
                                         ),
                                     ],
                                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -155,12 +155,6 @@ def main(page: ft.Page):
                                 margin=ft.margin.all(3),
                                 padding=ft.padding.only(left=10, right=10),
                                 content=ft.Row(
-                                    ref=input_clt,
-                                    ref=input_mot,
-                                    ref=input_dest,
-                                    ref=input_conf,
-                                    ref=input_placa,
-                                    ref=input_cub,
                                     controls=[
                                         CLT, MOT, DEST, CONF, PLACA, CUB, ADD
                                     ],
