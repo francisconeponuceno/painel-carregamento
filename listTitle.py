@@ -81,7 +81,7 @@ def main(page: ft.Page):
     tabela.controls.append(
         ft.Container(
             bgcolor='#FF0000',
-            padding=15,
+            padding=10,
             ref=cor_linha,
             content=ft.Row([
                 ft.Container(width=20,content=ft.Text(f"ID",size=11,weight='BOLD')),
@@ -91,12 +91,12 @@ def main(page: ft.Page):
                 ft.Container(width=100,content=ft.Text(f"CONFERENTE",size=11,weight='BOLD')),
                 ft.Container(width=80,content=ft.Text(f"PLACA",size=11,weight='BOLD')),
                 ft.Container(width=30,content=ft.Text(f"CUB",size=11,weight='BOLD')),
-                ft.Container(width=90,content=ft.Text(f"STATUS",size=11,weight='BOLD')),
-                ft.Container(width=100,content=ft.Text(f"IMG",size=11,weight='BOLD')),
+                ft.Container(width=90,content=ft.Text(f"STATUS",size=11,weight='BOLD',text_align='center')),
+                ft.Container(width=100,content=ft.Text(f"IMG",size=11,weight='BOLD',text_align='center')),
                 
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-            height=25
+            height=15
             )    
         )
     )
@@ -108,8 +108,10 @@ def main(page: ft.Page):
         cor_fundo = cor1 if i[0] % 2 == 0 else cor2
         tabela.controls.append(
             ft.Container(
+                expand=True,
+                height=50,
                 bgcolor=cor_fundo,
-                padding=15,
+                padding=10,
                 ref=cor_linha,
                 content=ft.Row([
                     ft.Container(width=20,content=ft.Text(f"{i[0]}",size=11,weight='BOLD')),
@@ -131,7 +133,7 @@ def main(page: ft.Page):
                                  ))
                 ],
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                height=25
+                
                 )    
             )
         )
