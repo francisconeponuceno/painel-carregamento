@@ -70,35 +70,32 @@ def main(page: ft.Page):
 
     # VARIÁVEIS
     status = ft.Ref[ft.Container]()
+    cor_linha = ft.Ref[ft.Container]()
     dados = consultarDados() # VARIÁVEL QUE RECEBE OS DADOS DO BANCO, ATRAVÉS DA FUNÇÃO consultaDdados()
 
     # CRIAÇÃO DA TABELA DE CARREGO
-    tabela = ft.Column(
-        scroll=ft.ScrollMode.ALWAYS,
+    tabela = ft.ListView(
         expand=True,
+        padding=10,
+        auto_scroll=True,
     )
     
     # AQUI COMERÇA A CRIAÇAO DAS LINHAS DA TABELA
-    for i in dados:
-        itens = ft.ListTile(
-            title=ft.Text(f"{i[0]}{i[1]}{i[2]}{i[3]}{i[4]}{i[5]}{i[6]}"
-                           
-            ,size=11, weight='BOLD'
-            ),
-            #title=ft.Text(f"{i[1]}", size=11, weight="BOLD"),
-            #title=ft.Text(f"{i[2]}", size=11, weight="BOLD"),
-            #title=ft.Text(f"{i[3]}", size=11, weight="BOLD"),
-            #title=ft.Text(f"{i[4]}", size=11, weight="BOLD"),
-            #title=ft.Text(f"{i[5]}", size=11, weight="BOLD"),
-            #title=ft.Text(f"{i[6]}", size=11, weight="BOLD"),
-        )  
-        
-        tabela.controls.append(itens)
-       
+    cor1 = '#D9E6FE'
+    cor2 = '#b3d3f8'
     
+    for i in dados:
+        cor_fundo = cor1 if i[0] % 2 == 0 else cor2
+        tabela.controls.append(
+            ft.Container(
+                content=ft.Text(f"{i[0]} {i[1]} {i[2]} {i[3]} {i[4]} {i[5]} {i[6]}",size=11,weight='BOLD'),
+                bgcolor=cor_fundo,
+                padding=15,
+                ref=cor_linha  
+            )
+        )
 
-        
-
+            
     # CONTAINER PRINCIPAL
     container = ft.Container(
         bgcolor="WHITE",
