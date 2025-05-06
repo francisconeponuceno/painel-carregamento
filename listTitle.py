@@ -76,22 +76,63 @@ def main(page: ft.Page):
     # CRIAÇÃO DA TABELA DE CARREGO
     tabela = ft.ListView(
         expand=True,
-        padding=10,
         auto_scroll=True,
     )
-    
+    tabela.controls.append(
+        ft.Container(
+            bgcolor='#FF0000',
+            padding=15,
+            ref=cor_linha,
+            content=ft.Row([
+                ft.Container(width=20,content=ft.Text(f"ID",size=11,weight='BOLD')),
+                ft.Container(width=30,content=ft.Text(f"CLT",size=11,weight='BOLD')),
+                ft.Container(width=150,content=ft.Text(f"MOTORISTA",size=11,weight='BOLD')),
+                ft.Container(width=150,content=ft.Text(f"DESTINO",size=11,weight='BOLD')),
+                ft.Container(width=100,content=ft.Text(f"CONFERENTE",size=11,weight='BOLD')),
+                ft.Container(width=80,content=ft.Text(f"PLACA",size=11,weight='BOLD')),
+                ft.Container(width=30,content=ft.Text(f"CUB",size=11,weight='BOLD')),
+                ft.Container(width=90,content=ft.Text(f"STATUS",size=11,weight='BOLD')),
+                ft.Container(width=100,content=ft.Text(f"IMG",size=11,weight='BOLD')),
+                
+            ],
+            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            height=25
+            )    
+        )
+    )
     # AQUI COMERÇA A CRIAÇAO DAS LINHAS DA TABELA
     cor1 = '#D9E6FE'
-    cor2 = '#b3d3f8'
+    cor2 = '#f7faff'
     
     for i in dados:
         cor_fundo = cor1 if i[0] % 2 == 0 else cor2
         tabela.controls.append(
             ft.Container(
-                content=ft.Text(f"{i[0]} {i[1]} {i[2]} {i[3]} {i[4]} {i[5]} {i[6]}",size=11,weight='BOLD'),
                 bgcolor=cor_fundo,
                 padding=15,
-                ref=cor_linha  
+                ref=cor_linha,
+                content=ft.Row([
+                    ft.Container(width=20,content=ft.Text(f"{i[0]}",size=11,weight='BOLD')),
+                    ft.Container(width=30,content=ft.Text(f"{i[1]}",size=11,weight='BOLD')),
+                    ft.Container(width=150,content=ft.Text(f"{i[2]}",size=11,weight='BOLD')),
+                    ft.Container(width=150,content=ft.Text(f"{i[3]}",size=11,weight='BOLD')),
+                    ft.Container(width=100,content=ft.Text(f"{i[4]}",size=11,weight='BOLD')),
+                    ft.Container(width=80,content=ft.Text(f"{i[5]}",size=11,weight='BOLD')),
+                    ft.Container(width=30,content=ft.Text(f"{i[6]}",size=11,weight='BOLD')),
+                    ft.Container(ref=status,
+                        bgcolor="#96dbfc",
+                        padding=5,
+                        border_radius=20,
+                        width=90,content=ft.Container(ft.Text(f"{i[7]}",size=11,weight="BOLD",text_align="center",color="#0505FF"))),
+
+                    ft.Container(width=100,content=ft.Container(ft.Image(src=f"{i[8]}",
+                                 width=60, height=60, border_radius=50),
+                                 expand=True
+                                 ))
+                ],
+                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                height=25
+                )    
             )
         )
 
