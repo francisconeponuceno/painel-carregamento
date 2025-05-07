@@ -10,12 +10,12 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
-    input_clt = ft.Ref[ft.TextField]()
-    input_mot = ft.Ref[ft.TextField]()
-    input_dest = ft.Ref[ft.TextField]()
-    input_conf = ft.Ref[ft.TextField]()
-    input_placa = ft.Ref[ft.TextField]()
-    input_cub = ft.Ref[ft.TextField]()
+    input_clt = str(ft.Ref[ft.TextField]()).upper()
+    input_mot = str(ft.Ref[ft.TextField]()).upper()
+    input_dest = str(ft.Ref[ft.TextField]()).upper()
+    input_conf = str(ft.Ref[ft.TextField]()).upper()
+    input_placa = str(ft.Ref[ft.TextField]()).upper()
+    input_cub = int(ft.Ref[ft.TextField]())
 
     # CRIAÇÃO DOS INPUTS DOS CARREGOS
     CLT = ft.TextField(label='clt',text_align='center',text_size=10,width=30,content_padding=0,ref=input_clt)
@@ -84,15 +84,15 @@ def main(page: ft.Page):
             bgcolor='#FF0000',
             padding=5,
             content=ft.Row([
-                ft.Container(width=20,content=ft.Text(f"ID",size=11,weight='BOLD')),
-                ft.Container(width=30,content=ft.Text(f"CLT",size=11,weight='BOLD')),
-                ft.Container(expand=True,width=150,content=ft.Text(f"MOTORISTA",size=11,weight='BOLD')),
-                ft.Container(expand=True,width=150,content=ft.Text(f"DESTINO",size=11,weight='BOLD')),
-                ft.Container(width=100,content=ft.Text(f"CONFERENTE",size=11,weight='BOLD')),
-                ft.Container(width=80,content=ft.Text(f"PLACA",size=11,weight='BOLD')),
-                ft.Container(width=30,content=ft.Text(f"CUB",size=11,weight='BOLD',)),
-                ft.Container(width=90,content=ft.Text(f"STATUS",size=11,weight='BOLD')),
-                ft.Container(width=45,content=ft.Text(f"IMG",size=11,weight='BOLD')),
+                ft.Container(width=20,content=ft.Text(f"ID",size=11,weight='BOLD',color='white')),
+                ft.Container(width=30,content=ft.Text(f"CLT",size=11,weight='BOLD',color='white')),
+                ft.Container(expand=True,width=150,content=ft.Text(f"MOTORISTA",size=11,weight='BOLD',color='white')),
+                ft.Container(expand=True,width=150,content=ft.Text(f"DESTINO",size=11,weight='BOLD',color='white')),
+                ft.Container(width=100,content=ft.Text(f"CONFERENTE",size=11,weight='BOLD',color='white')),
+                ft.Container(width=80,content=ft.Text(f"PLACA",size=11,weight='BOLD',color='white')),
+                ft.Container(width=30,content=ft.Text(f"CUB",size=11,weight='BOLD',color='white')),
+                ft.Container(width=90,content=ft.Text(f"STATUS",size=11,weight='BOLD',color='white')),
+                ft.Container(width=45,content=ft.Text(f"IMG",size=11,weight='BOLD',color='white')),
                 
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -100,7 +100,7 @@ def main(page: ft.Page):
             )    
         )
     )
-    # AQUI COMERÇA A CRIAÇAO DAS LINHAS DA TABELA
+    # CRIAÇAO DAS LINHAS DA TABELA
     cor1 = '#D9E6FE'
     cor2 = '#f7faff'
     
