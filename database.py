@@ -75,6 +75,7 @@ def excluir(id):
         cursor.execute(f'DELETE FROM carrego WHERE id = {id}')
         conect.commit()
         conect.close()
+        print('DADOS EXCLUIDO COM SUCESSO')
     except:
         print('ERRO AO EXCLUIR OS DADOS')
 
@@ -86,6 +87,7 @@ def excluir(id):
 
 #salvar('T','SILVAN ALVES CHAVES','FORTALEZA','CASSIO','QRZ-2B31','80','AGUARD','img/socimol.png')
 
-#alterarFase(5,'CANCELADO')
+#alterarFase(7,'ADIADO')
+#excluir(5)
 
 

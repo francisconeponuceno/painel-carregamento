@@ -141,9 +141,8 @@ def main(page: ft.Page):
                         ),
 
                         ft.Container(
-                            height=45,
-                            bgcolor='green',
-                            width=45,
+                            height=48,
+                            width=48,
                             border_radius=50, 
                             content=ft.Image(
                                 src=f"{i[8]}",
@@ -162,11 +161,11 @@ def main(page: ft.Page):
                 status.current.bgcolor = "#7ebb7e"
                 status_text.current.color = '#022902'
             case 'CANCELADO':
-                status.current.bgcolor = '#f5c5c5'
+                status.current.bgcolor = '#f99292'
                 status_text.current.color = '#690303'
             case 'ADIADO':
-                status.current.bgcolor = '#f5c5c5'
-                status_text.current.color = '#690303'    
+                status.current.bgcolor = '#fb7929'
+                status_text.current.color = '#672802'    
         page.update()
             
     # CONTAINER PRINCIPAL
