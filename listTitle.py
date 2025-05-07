@@ -70,29 +70,29 @@ def main(page: ft.Page):
 
     # VARIÁVEIS
     status = ft.Ref[ft.Container]()
-    cor_linha = ft.Ref[ft.Container]()
+    status_text = ft.Ref[ft.Text]()
     dados = consultarDados() # VARIÁVEL QUE RECEBE OS DADOS DO BANCO, ATRAVÉS DA FUNÇÃO consultaDdados()
 
     # CRIAÇÃO DA TABELA DE CARREGO
     tabela = ft.ListView(
         expand=True,
-        auto_scroll=True,
+        auto_scroll=False
     )
+    # CABEÇALHO DA TABELA
     tabela.controls.append(
         ft.Container(
             bgcolor='#FF0000',
-            padding=10,
-            ref=cor_linha,
+            padding=5,
             content=ft.Row([
                 ft.Container(width=20,content=ft.Text(f"ID",size=11,weight='BOLD')),
                 ft.Container(width=30,content=ft.Text(f"CLT",size=11,weight='BOLD')),
-                ft.Container(width=150,content=ft.Text(f"MOTORISTA",size=11,weight='BOLD')),
-                ft.Container(width=150,content=ft.Text(f"DESTINO",size=11,weight='BOLD')),
+                ft.Container(expand=True,width=150,content=ft.Text(f"MOTORISTA",size=11,weight='BOLD')),
+                ft.Container(expand=True,width=150,content=ft.Text(f"DESTINO",size=11,weight='BOLD')),
                 ft.Container(width=100,content=ft.Text(f"CONFERENTE",size=11,weight='BOLD')),
                 ft.Container(width=80,content=ft.Text(f"PLACA",size=11,weight='BOLD')),
-                ft.Container(width=30,content=ft.Text(f"CUB",size=11,weight='BOLD')),
-                ft.Container(width=90,content=ft.Text(f"STATUS",size=11,weight='BOLD',text_align='center')),
-                ft.Container(width=100,content=ft.Text(f"IMG",size=11,weight='BOLD',text_align='center')),
+                ft.Container(width=30,content=ft.Text(f"CUB",size=11,weight='BOLD',)),
+                ft.Container(width=90,content=ft.Text(f"STATUS",size=11,weight='BOLD')),
+                ft.Container(width=45,content=ft.Text(f"IMG",size=11,weight='BOLD')),
                 
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -111,33 +111,63 @@ def main(page: ft.Page):
                 expand=True,
                 height=50,
                 bgcolor=cor_fundo,
-                padding=10,
-                ref=cor_linha,
-                content=ft.Row([
-                    ft.Container(width=20,content=ft.Text(f"{i[0]}",size=11,weight='BOLD')),
-                    ft.Container(width=30,content=ft.Text(f"{i[1]}",size=11,weight='BOLD')),
-                    ft.Container(width=150,content=ft.Text(f"{i[2]}",size=11,weight='BOLD')),
-                    ft.Container(width=150,content=ft.Text(f"{i[3]}",size=11,weight='BOLD')),
-                    ft.Container(width=100,content=ft.Text(f"{i[4]}",size=11,weight='BOLD')),
-                    ft.Container(width=80,content=ft.Text(f"{i[5]}",size=11,weight='BOLD')),
-                    ft.Container(width=30,content=ft.Text(f"{i[6]}",size=11,weight='BOLD')),
-                    ft.Container(ref=status,
-                        bgcolor="#96dbfc",
-                        padding=5,
-                        border_radius=20,
-                        width=90,content=ft.Container(ft.Text(f"{i[7]}",size=11,weight="BOLD",text_align="center",color="#0505FF"))),
+                padding=ft.padding.only(left=10, right=10),
+                margin=0,
+                content=ft.Row(
+                    [
+                        ft.Container(width=20,content=ft.Text(f"{i[0]}",size=11,weight='BOLD',text_align='left')),
+                        ft.Container(width=30,content=ft.Text(f"{i[1]}",size=11,weight='BOLD')),
+                        ft.Container(expand=True,width=150,content=ft.Text(f"{i[2]}",size=11,weight='BOLD')),
+                        ft.Container(expand=True,width=150,content=ft.Text(f"{i[3]}",size=11,weight='BOLD')),
+                        ft.Container(width=100,content=ft.Text(f"{i[4]}",size=11,weight='BOLD',text_align='center')),
+                        ft.Container(width=80,content=ft.Text(f"{i[5]}",size=11,weight='BOLD')),
+                        ft.Container(width=30,content=ft.Text(f"{i[6]}",size=11,weight='BOLD')),
+                        ft.Container(
+                            ref=status,
+                            bgcolor="#96dbfc",
+                            padding=5,
+                            border_radius=20,
+                            width=90,
+                            content=ft.Container(
+                                ft.Text(
+                                    f"{i[7]}",
+                                    size=11,
+                                    weight="BOLD",
+                                    text_align="center",
+                                    color="#0505FF",
+                                    ref=status_text
+                                )
+                            )
+                        ),
 
-                    ft.Container(width=100,content=ft.Container(ft.Image(src=f"{i[8]}",
-                                 width=60, height=60, border_radius=50),
-                                 expand=True
-                                 ))
-                ],
-                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                
+                        ft.Container(
+                            height=45,
+                            bgcolor='green',
+                            width=45,
+                            border_radius=50, 
+                            content=ft.Image(
+                                src=f"{i[8]}",
+                                fit=ft.ImageFit.COVER,
+                           ),
+                           
+                        )
+                       
+                    ],alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 )    
             )
         )
-
+        # VERIFICAÇÃO DAS FASES DO CARREGO
+        match i[7]:
+            case 'CONCLUIDO':
+                status.current.bgcolor = "#7ebb7e"
+                status_text.current.color = '#022902'
+            case 'CANCELADO':
+                status.current.bgcolor = '#f5c5c5'
+                status_text.current.color = '#690303'
+            case 'ADIADO':
+                status.current.bgcolor = '#f5c5c5'
+                status_text.current.color = '#690303'    
+        page.update()
             
     # CONTAINER PRINCIPAL
     container = ft.Container(
