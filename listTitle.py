@@ -71,8 +71,7 @@ def main(page: ft.Page):
                 img_conf
             )
             
-            container_tabela.current.update()
-            page.update()
+            page.update(container)
         except:
             return
         
@@ -123,8 +122,22 @@ def main(page: ft.Page):
     cor1 = '#D9E6FE'
     cor2 = '#f7faff'
     contador = 0
+    cub_total = cub_claudino = cub_terceiro = cub_escoamento = 0
+    car_claudino = car_terceiro = car_escoamento = 0
     for i in dados:
         contador += 1
+        cub_total += i[6]
+        match i[1]:
+            case 'C':
+                cub_claudino += i[6]
+                car_claudino += 1
+            case 'T':
+                cub_terceiro += i[6]
+                car_terceiro += 1
+            case 'E':
+                cub_escoamento += i[6]
+                car_escoamento += 1
+        
         cor_fundo = cor1 if contador % 2 == 0 else cor2
         tabela.controls.append(
             ft.Container(
@@ -259,28 +272,63 @@ def main(page: ft.Page):
                                 content=ft.Row(
                                     controls=[
                                         ft.Container(
+                                            content=ft.Column([
+                                                ft.Text('Total M³'),
+                                                ft.Text(f"{cub_total}",size=15,weight='BOLD',text_align='center')
+                                            ]),
                                             bgcolor="white",
                                             height=60,
                                             border_radius=10,
                                             expand=True,
+                                            padding=5,
+                                            alignment=ft.alignment.center,
                                         ),
                                         ft.Container(
+                                            content=ft.Column(controls=[
+                                                ft.Text('Terceiro',text_align='center'),
+                                                ft.Row([
+                                                    ft.Text(f"{car_terceiro}",size=15, weight='BOLD'),
+                                                    ft.Icon(ft.icons.LOCAL_SHIPPING_ROUNDED,color='#0505FF')    
+                                                ],alignment=ft.MainAxisAlignment.CENTER)
+
+                                            ]),
                                             bgcolor="white",
                                             height=60,
                                             border_radius=10,
                                             expand=True,
+                                            padding=5,
+                                            alignment=ft.alignment.center,
+                                            
                                         ),
                                         ft.Container(
+                                            content=ft.Column([
+                                                ft.Text('Claudino'),
+                                                ft.Row([
+                                                    ft.Text(f"{car_claudino}",size=15, weight='BOLD'),
+                                                    ft.Icon(ft.icons.LOCAL_SHIPPING_ROUNDED,color='#0505FF')    
+                                                ],alignment=ft.MainAxisAlignment.CENTER)
+                                            ]),
                                             bgcolor="white",
                                             height=60,
                                             border_radius=10,
                                             expand=True,
+                                            padding=5,
+                                            alignment=ft.alignment.center
                                         ),
                                         ft.Container(
+                                            content=ft.Column([
+                                                ft.Text('Escoamento'),
+                                                ft.Row([
+                                                    ft.Text(f"{car_escoamento}",size=15,weight='BOLD'),
+                                                    ft.Icon(ft.icons.LOCAL_SHIPPING_ROUNDED,color='#0505FF')    
+                                                ],alignment=ft.MainAxisAlignment.CENTER)
+                                            ]),
                                             bgcolor="white",
                                             height=60,
                                             border_radius=10,
                                             expand=True,
+                                            padding=5,
+                                            alignment=ft.alignment.center
                                         ),
                                     ],
                                 ),
